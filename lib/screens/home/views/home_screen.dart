@@ -5,13 +5,15 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'main_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      // appBar: AppBar(),
       bottomNavigationBar:ClipRRect(
         borderRadius: const BorderRadius.vertical(
           top: Radius.circular(30),
@@ -49,9 +51,11 @@ class HomeScreen extends StatelessWidget {
           child: const Icon(
             CupertinoIcons.add,
             color: Colors.white,
+            size: 20,
             )
         ),
       ),
+      body:const MainView()
     );
   }
 }
