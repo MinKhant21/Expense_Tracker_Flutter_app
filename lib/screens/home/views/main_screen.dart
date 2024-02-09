@@ -59,18 +59,150 @@ class MainView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Container(
-              height: MediaQuery.of(context).size.width / 2,
-              decoration: BoxDecoration(
-                  color: Colors.red,
-                  gradient: const LinearGradient(colors: [
-                    Color(0xFFFF8D6C),
-                    Color(0xFFE064F7),
-                    Color(0xFF00B2E7),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.width / 2,
+                decoration: BoxDecoration(
+                    color: Colors.red,
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xFFFF8D6C),
+                        Color(0xFFE064F7),
+                        Color(0xFF00B2E7),
+                      ],
+                      transform: GradientRotation(pi / 4),
+                    ),
+                    borderRadius: BorderRadius.circular(25)),
+                child: const Column(
+                  children: [
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Total Balance",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "\$4000000",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              CircleAvatar(
+                                backgroundColor:
+                                    Color.fromARGB(255, 223, 189, 189),
+                                child: Icon(CupertinoIcons.arrow_down),
+                              ),
+                              SizedBox(
+                                width: 8,
+                              ),
+                              Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "income",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 3,
+                                    ),
+                                    Text(
+                                      "\$ 25000",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                      ),
+                                    )
+                                  ]),
+                              SizedBox(
+                                width: 80,
+                              ),
+                              CircleAvatar(
+                                backgroundColor:
+                                    Color.fromARGB(255, 223, 189, 189),
+                                child: Icon(CupertinoIcons.arrow_up),
+                              ),
+                              SizedBox(
+                                width: 8,
+                              ),
+                              Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "outcome",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 3,
+                                    ),
+                                    Text(
+                                      "\$ 25000",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                      ),
+                                    )
+                                  ]),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
-                  transform:  GradientRotation(pi/4),
-                  ),
-                  borderRadius: BorderRadius.circular(25)),
+                ),
+              ),
+            ),
+            const SizedBox(height: 40,),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Transactions",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),
+                ),
+                Text("View All",
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 13,
+                ),
+                
+                ),
+              ],
             )
           ],
         ),
