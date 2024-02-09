@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:expense_tracker_app/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -183,26 +184,66 @@ class MainView extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 40,),
+            const SizedBox(
+              height: 40,
+            ),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Transactions",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
+                Text(
+                  "Transactions",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
                 ),
-                ),
-                Text("View All",
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 13,
-                ),
-                
+                Text(
+                  "View All",
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 13,
+                  ),
                 ),
               ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: transactionsData.length,
+                  itemBuilder: (context, index) {
+                    final data = transactionsData[index];
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    data['icon'],
+                                    const Text("Food",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 12,
+                                        )),
+                                  ],
+                                ),
+                                const Text("24/3/2023"),
+                              ],
+                            )),
+                      ),
+                    );
+                  }),
             )
           ],
         ),

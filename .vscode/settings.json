@@ -1,0 +1,22 @@
+{
+     "files.exclude": {
+         "**/.git": true,
+         "**/.svn": true,
+         "**/.hg": true,
+         "**/CVS": true,
+         "**/.DS_Store": true,
+         "**/Thumbs.db": true,
+         "**/*.freezed.dart": true,
+         "**/*.g.dart": true
+     },
+     "editor.codeActionsOnSave": {
+         "source.fixAll": "explicit"
+     },
+     "explorerExclude.backup": {},
+     "editor.bracketPairColorization.enabled": true,
+     "dart.previewFlutterUiGuides": true,
+     "[dart]": {
+         "editor.defaultFormatter": "Dart-Code.dart-code",
+         "editor.formatOnSave": true,
+     },
+ }
