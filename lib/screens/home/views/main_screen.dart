@@ -215,7 +215,6 @@ class MainView extends StatelessWidget {
               child: ListView.builder(
                   itemCount: transactionsData.length,
                   itemBuilder: (context, index) {
-                    final data = transactionsData[index];
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Container(
@@ -230,15 +229,46 @@ class MainView extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    data['icon'],
-                                    const Text("Food",
-                                        style: TextStyle(
+                                    Container(
+                                      width: 50,
+                                      height: 50,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: transactionsData[index]
+                                              ['color'],
+                                          borderRadius:
+                                              BorderRadius.circular(50)),
+                                      child: transactionsData[index]['icon'],
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text(transactionsData[index]['name'],
+                                        style: const TextStyle(
                                           color: Colors.black,
                                           fontSize: 12,
                                         )),
                                   ],
                                 ),
-                                const Text("24/3/2023"),
+                                Row(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Text(
+                                          transactionsData[index]
+                                              ['totalAmount'],
+                                        ),
+                                        Text(
+                                          transactionsData[index]['date'],
+                                          style: const TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 12,
+                                          ),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
                               ],
                             )),
                       ),
