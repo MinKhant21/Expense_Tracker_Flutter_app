@@ -2,8 +2,9 @@
 
 import 'dart:math';
 
+import 'package:expense_tracker_app/screens/add_expense/view/add_screen.dart';
 import 'package:expense_tracker_app/screens/status/status_screen.dart';
-// import 'package:expense_tracker_app/screens/add_expense/view/add_screen.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -63,8 +64,9 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navigate to the AddScreen when the button is pressed.
-          // Navigator.push(context, MaterialPageRoute(builder: (context) => AddScreen()));
+          // Navigate to the AddScreen when the labelLarge is pressed.
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const AddScreen()));
         },
         mini: true,
         shape: const CircleBorder(),
